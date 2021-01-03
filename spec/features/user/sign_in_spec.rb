@@ -10,17 +10,22 @@ describe 'User can sign in', "
   before { visit new_user_session_path }
 
   it 'Registered user tries to sign in' do
+    I18n.default_locale
     fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    click_on 'Log in'
-    expect(page).to have_content 'Signed in successfully.'
+    fill_in I18n.t('devise.sessions.new.password'), with: user.password
+    within '.actions' do
+      click_on I18n.t('devise.sessions.new.log_in')
+    end
+    expect(page).to have_content I18n.t('devise.sessions.signed_in')
   end
 
   it 'Unregistered user tries to sign in' do
     fill_in 'Email', with: 'wrong@test.com'
-    fill_in 'Password', with: '12345678'
-    click_on 'Log in'
+    fill_in I18n.t('devise.sessions.new.password'), with: '12345678'
+    within '.actions' do
+      click_on I18n.t('devise.sessions.new.log_in')
+    end
 
-    expect(page).to have_content 'Invalid Email or password.'
+    expect(page).to have_content I18n.t('devise.failure.invalid', authentication_keys: "Email")
   end
 end
