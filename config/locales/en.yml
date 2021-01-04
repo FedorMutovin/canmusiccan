@@ -7,3 +7,4 @@ en:
       log_in: "Log In"
       sign_up: "Sign Up"
       welcome: "Welcome, %{email} "
+      edit: "Edit Account"

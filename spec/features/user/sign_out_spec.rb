@@ -9,7 +9,6 @@ describe 'User can sign out', "
 
   it 'Authenticated user tries to sign out' do
     sign_in(user)
-    save_and_open_page
     click_on I18n.t('.shared.header.logout')
     expect(page).to have_content I18n.t('devise.sessions.signed_out')
   end

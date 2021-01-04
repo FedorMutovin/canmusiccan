@@ -8,7 +8,6 @@ describe 'User can sign up', "
   before { visit new_user_registration_path }
 
   it 'User tries to sign up' do
-    save_and_open_page
     fill_in 'Email', with: 'user@user.user'
     fill_in I18n.t('devise.registrations.new.password'), with: '12345678'
     fill_in I18n.t('devise.registrations.new.password_confirmation'), with: '12345678'

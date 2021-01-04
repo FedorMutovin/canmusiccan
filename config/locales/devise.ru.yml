@@ -50,6 +50,18 @@ ru:
         password_confirmation: "Подтвердите пароль"
         sign_up: "Зарегистрироваться"
         characters_minimum: "Минимум %{minimum_password_length} символов"
+      edit:
+        password: "Пароль"
+        password_confirmation: "Подтвердите пароль"
+        current_password: "Текущий пароль"
+        characters_minimum: "Минимум %{minimum_password_length} символов"
+        update: "Обновить"
+        edit_account: "Изменить профиль"
+        avatar: "Аватар"
+        leave_blank: "(оставьте пустым, если не хотите изменить)"
+        current_password_info: "(введите текущий пароль для подтверждения изменений)"
+        cancel_account: "Удалить аккаунт"
+        back: "Назад"
     sessions:
       signed_in: "Вход в систему выполнен."
       signed_out: "Выход из системы выполнен."

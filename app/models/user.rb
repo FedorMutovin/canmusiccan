@@ -6,4 +6,6 @@ class User < ApplicationRecord
          :validatable,
          :confirmable,
          :omniauthable
+
+  has_one_attached :avatar
 end

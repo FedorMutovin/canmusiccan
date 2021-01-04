@@ -52,6 +52,18 @@ en:
         password_confirmation: "Password Confirmation"
         sign_up: "Sign Up"
         characters_minimum: "%{minimum_password_length} characters minimum"
+      edit:
+        password: "Password"
+        password_confirmation: "Password Confirmation"
+        current_password: "Current Password"
+        characters_minimum: "%{minimum_password_length} characters minimum"
+        update: "Update"
+        edit_account: "Edit Account"
+        avatar: "Avatar"
+        leave_blank: "(leave blank if you don't want to change it)"
+        current_password_info: "(we need your current password to confirm your changes)"
+        cancel_account: "Cancel my account"
+        back: "Back"
     sessions:
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
