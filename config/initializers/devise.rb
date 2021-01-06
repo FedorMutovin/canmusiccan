@@ -272,6 +272,15 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+  config.omniauth :spotify,
+                  Rails.application.credentials[Rails.env.to_sym][:spotify][:app_id],
+                  Rails.application.credentials[Rails.env.to_sym][:spotify][:app_secret],
+                  scope: 'user-read-email'
+
+  config.omniauth :facebook,
+                  Rails.application.credentials[Rails.env.to_sym][:facebook][:app_id],
+                  Rails.application.credentials[Rails.env.to_sym][:facebook][:app_secret],
+                  scope: 'email, public_profile'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
