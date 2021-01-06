@@ -8,3 +8,4 @@ en:
       sign_up: "Sign Up"
       welcome: "Welcome, %{email} "
       edit: "Edit Account"
+      show: "My Account"

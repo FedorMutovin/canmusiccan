@@ -1,11 +1,16 @@
-= link_to "CanMusicCan", root_path
-= link_to t('.en'), locale: :en
-= link_to t('.ru'), locale: :ru
-- if user_signed_in?
-  = t('.welcome', email: current_user.email)
-  = link_to  t('.logout'), destroy_user_session_path, method: :delete
-  = link_to t('.edit'), edit_user_registration_path
-- else
-  = link_to  t('.log_in'), new_user_session_path
-  = link_to  t('.sign_up'), new_user_registration_path
-.errors
+nav.navbar.navbar-dark.border-bottom.bg-success
+  .navbar-text
+    = link_to t('.en'), locale: :en
+    = link_to t('.ru'), locale: :ru
+  = link_to "CanMusicCan", root_path, class: "navbar-brand"
+  .navbar-text
+    - if user_signed_in?
+      - if current_user.avatar.attached?
+        = link_to image_tag(current_user.avatar.variant(resize: "50x50!"), class: "rounded-circle"), user_path(current_user)
+      - else
+        = link_to t('.show'), user_path(current_user)
+      = link_to t('.edit'), edit_user_registration_path
+      = link_to  t('.logout'), destroy_user_session_path, method: :delete
+    - else
+      = link_to  t('.log_in'), new_user_session_path
+      = link_to  t('.sign_up'), new_user_registration_path
