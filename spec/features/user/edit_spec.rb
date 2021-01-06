@@ -5,8 +5,8 @@ describe 'User can change his information', "
  As an authenticated user
  I'd like to be able to change my information
 " do
-
   let!(:user) { create(:user) }
+
   before do
     sign_in(user)
     visit edit_user_registration_path
@@ -15,7 +15,6 @@ describe 'User can change his information', "
   describe 'Authenticated user' do
     it 'tries to edit his email' do
       fill_in 'Email', with: 'mi@mail.ru'
-      save_and_open_page
       fill_in I18n.t('devise.registrations.edit.current_password'), with: user.password
       click_on I18n.t('devise.registrations.edit.update')
       expect(page).to have_content I18n.t('devise.registrations.update_needs_confirmation')
@@ -39,7 +38,7 @@ describe 'User can change his information', "
     end
 
     it 'tries to add avatar img' do
-      attach_file I18n.t('devise.registrations.edit.avatar'), "#{Rails.root}/spec/images/avatar.jpg"
+      attach_file I18n.t('devise.registrations.edit.avatar'), Rails.root.join('spec/images/avatar.jpg')
       fill_in I18n.t('devise.registrations.edit.current_password'), with: user.password
       click_on I18n.t('devise.registrations.edit.update')
       expect(page).to have_content I18n.t('devise.registrations.updated')
@@ -47,5 +46,4 @@ describe 'User can change his information', "
       expect(page).to have_css("img[src*='avatar.jpg']")
     end
   end
-
 end
