@@ -79,6 +79,7 @@ en:
         forgot_password: "Forgot your password?"
         didnt_receive_unlock_instructions: "Didn't receive unlock instructions?"
         didnt_receive_confirmation_instruction: "Didn't receive confirmation instructions?"
+        omniauth_sign_in: "Sign in with %{provider}"
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."

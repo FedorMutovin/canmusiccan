@@ -77,6 +77,7 @@ ru:
         forgot_password: "Забыли пароль?"
         didnt_receive_unlock_instructions: "Не получили инструкцию по восстановлению?"
         didnt_receive_confirmation_instruction: "Не получили инструкцию для подтверждения?"
+        omniauth_sign_in: "Вход через %{provider}"
     unlocks:
       send_instructions: "В течение нескольких минут вы получите письмо с инструкциями по разблокировке вашей учётной записи."
       send_paranoid_instructions: "Если ваша учётная запись существует, то в течение нескольких минут вы получите письмо с инструкциями по её разблокировке."
