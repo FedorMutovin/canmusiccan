@@ -5,11 +5,33 @@ describe 'User can show his account page', "
  As an authenticated user
  I'd like to be able to show my account page
 " do
-  let!(:user) { create(:user) }
+  let!(:current_user) { create(:user, :with_demotrack) }
+  let!(:other_user) { create(:user) }
+
+  describe 'Authenticated user' do
+    it 'tries to show current_user account' do
+      sign_in(current_user)
+      expect(page).to have_link(href: user_path(current_user))
+      visit user_path(current_user)
+      expect(page).to have_link 'demotrack.mp3'
+      expect(page).to have_css 'audio'
+      expect(page).to have_content I18n.t('demotracks.demotracks.delete_track')
+      expect(page).to have_content I18n.t('demotracks.form.new_demotrack')
+    end
+
+    it 'tries to show other_user account' do
+      sign_in(other_user)
+      visit user_path(other_user)
+      expect(page).not_to have_link 'demotrack.mp3'
+      expect(page).not_to have_css 'audio'
+      expect(page).not_to have_content I18n.t('demotracks.demotracks.delete_track')
+      expect(page).not_to have_content I18n.t('demotracks.form.add_demotrack')
+    end
+  end
 
   describe 'Unauthenticated user' do
     it 'tries to show user account' do
-      expect(page).not_to have_link(href: user_path(user))
+      expect(page).not_to have_link(href: user_path(current_user))
     end
   end
 end

@@ -1,7 +1,7 @@
 .new_demotrack
-  p Add your new demotrack
-  = form_with url: user_demotracks_path(resource), method: :post, local: false do |f|
+  p #{t('.add_demotrack_info')}
+  = form_with url: user_demotracks_path(resource), local: false do |f|
     p
-      = f.label :demotrack, "New Demotrack"
+      = f.label :demotrack, t('.new_demotrack')
       = f.file_field :demotrack
-      = f.submit 'Add Demotrack'
+      = f.submit t('.add_demotrack')

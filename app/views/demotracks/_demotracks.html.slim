@@ -9,4 +9,4 @@
             audio(controls)
               source src="#{rails_blob_url(demotrack)}" type="#{demotrack.content_type}"
             br
-            = link_to 'Delete track', demotrack_path(demotrack), method: :delete, remote: true if can? :destroy, demotrack
+            = link_to t('.delete_track'), demotrack_path(demotrack), method: :delete, remote: true if can? :destroy, demotrack

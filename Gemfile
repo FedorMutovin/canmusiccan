@@ -32,10 +32,10 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-spotify'
 
-gem 'image_processing', '~> 1.2'
-gem 'slim-rails'
 gem 'activestorage-validator'
 gem 'cancancan'
+gem 'image_processing', '~> 1.2'
+gem 'slim-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -68,9 +68,9 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'capybara-email'
   gem 'launchy'
+  gem 'rails-controller-testing'
   gem 'shoulda-matchers'
   gem 'webdrivers'
-  gem 'rails-controller-testing'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

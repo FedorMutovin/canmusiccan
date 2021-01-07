@@ -9,3 +9,16 @@ ru:
       welcome: "Добро пожаловать, %{email} "
       edit: "Изменить профиль"
       show: "Мой Аккаунт"
+  users:
+    show:
+      demo: "Демо"
+      spotify_tracks: "Трэки из Spotify"
+  demotracks:
+    format_error: "Вы можете добавить только аудио файл"
+    demotracks:
+      delete_track: "Удалить трэк"
+    form:
+      add_demotrack_info: "Добавь своё новое демо"
+      new_demotrack: "Новое демо"
+      add_demotrack: 'Добавить демо'
+

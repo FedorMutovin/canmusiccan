@@ -9,3 +9,15 @@ en:
       welcome: "Welcome, %{email} "
       edit: "Edit Account"
       show: "My Account"
+  users:
+    show:
+      demo: "Demotracks"
+      spotify_tracks: "Tracks From Spotify"
+  demotracks:
+    format_error: "You must add only audio file"
+    demotracks:
+      delete_track: "Delete Track"
+    form:
+      add_demotrack_info: "Add your new demotrack"
+      new_demotrack: "New Demotrack"
+      add_demotrack: 'Add Demotrack'

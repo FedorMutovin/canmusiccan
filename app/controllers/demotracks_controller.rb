@@ -7,7 +7,7 @@ class DemotracksController < ApplicationController
 
   def create
     authorize! :create, @user.demotracks
-    redirect_to @user, alert: "You must add only audio file" unless @user.demotracks.attach(params[:demotrack])
+    redirect_to @user, alert: t('demotracks.format_error') unless @user.demotracks.attach(params[:demotrack])
   end
 
   def destroy
