@@ -1,5 +1,13 @@
 class UsersController < ApplicationController
-  def show
+  before_action :authenticate_user!
+  before_action :user, only: :show
+  skip_authorization_check
+
+  def show; end
+
+  private
+
+  def user
     @user = User.find(params[:id])
   end
 end

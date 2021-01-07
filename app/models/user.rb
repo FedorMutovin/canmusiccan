@@ -9,7 +9,10 @@ class User < ApplicationRecord
          omniauth_providers: %i[spotify facebook]
 
   has_one_attached :avatar
+  has_many_attached :demotracks
   has_many :authorizations, dependent: :destroy
+
+  validates :demotracks, blob: { content_type: :audio, size_range: 0..5.megabytes }
 
   def self.find_for_oauth(auth)
     FindForOauth.new(auth).call

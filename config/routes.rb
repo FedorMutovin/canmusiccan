@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     post 'set_email', to: 'oauth_callbacks#set_email'
   end
-  resources :users, only: [:show]
+  resources :users, only: :show do
+    resources :demotracks, only: %i[create destroy], shallow: true
+  end
 end
