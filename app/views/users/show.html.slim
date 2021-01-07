@@ -1,0 +1,11 @@
+ul.nav.nav-tabs id="myTab" role="tablist"
+  li.nav-item
+    a.nav-link.active.text-success id="demotracks-tab" data-toggle="tab" href="#demotracks" role="tab" aria-controls="demotracks" aria-selected="true" Demotracks
+  li.nav-item
+    a.nav-link.text-success id="tracks-from-spotify-tab" data-toggle="tab" href="#tracks-from-spotify" role="tab" aria-controls="tracks-from-spotify" aria-selected="false" Tracks From Spotify
+
+.tab-content id="myTabContent"
+  .tab-pane.fade.show.active id="demotracks" role="tabpanel" aria-labelledby="demotracks-tab"
+    = render 'demotracks/demotracks', resource: @user
+    = render 'demotracks/form', resource: @user
+  .tab-pane.fade id="tracks-from-spotify" role="tracks-from-spotify" aria-labelledby="tracks-from-spotify-tab" 2

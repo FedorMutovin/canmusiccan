@@ -34,6 +34,8 @@ gem 'omniauth-spotify'
 
 gem 'image_processing', '~> 1.2'
 gem 'slim-rails'
+gem 'activestorage-validator'
+gem 'cancancan'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -68,6 +70,7 @@ group :test do
   gem 'launchy'
   gem 'shoulda-matchers'
   gem 'webdrivers'
+  gem 'rails-controller-testing'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

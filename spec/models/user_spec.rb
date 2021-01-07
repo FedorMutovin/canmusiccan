@@ -9,6 +9,10 @@ RSpec.describe User, type: :model do
     expect(described_class.new.avatar).to be_an_instance_of(ActiveStorage::Attached::One)
   end
 
+  it 'have many attached demotrack' do
+    expect(described_class.new.demotracks).to be_an_instance_of(ActiveStorage::Attached::Many)
+  end
+
   describe '.find_for_ouath' do
     let!(:user) { create(:user) }
     let(:auth) { OmniAuth::AuthHash.new(provider: 'spotify', uid: '123456') }
