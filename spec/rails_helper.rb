@@ -40,6 +40,7 @@ RSpec.configure do |config|
   config.include OmniauthHelpers
 
   Capybara.javascript_driver = :selenium_headless
+  Capybara.default_max_wait_time = 7
 
   OmniAuth.config.test_mode = true
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures

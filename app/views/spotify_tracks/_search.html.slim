@@ -1,0 +1,4 @@
+p.mt-3.text-justify #{t('.search_track')}
+= form_tag search_tracks_path, method: "get", html: { class: "form " }, remote: true do
+  = text_field_tag(:track_name, "", placeholder: "#{t('.enter_track_name')}", class: "form-control")
+  = submit_tag "#{t('.search')}", class: "btn btn-success mt-2 mb-2"

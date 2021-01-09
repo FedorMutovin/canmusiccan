@@ -36,6 +36,7 @@ gem 'activestorage-validator'
 gem 'cancancan'
 gem 'image_processing', '~> 1.2'
 gem 'slim-rails'
+gem 'rspotify'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

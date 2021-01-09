@@ -7,15 +7,13 @@ describe 'User can delete demotracks', "
 " do
   let(:user) { create(:user) }
 
-  describe 'Authenticated user' do
-    before { sign_in(user) }
+  before { sign_in(user) }
 
-    it 'delete demotrack', js: true do
-      user.demotracks.attach(io: File.open(Rails.root.join('spec/audio/demotrack.mp3')), filename: 'demotrack.mp3')
-      visit user_path(user)
-      click_on I18n.t('demotracks.demotracks.delete_track')
-      expect(page).not_to have_link 'demotrack.mp3'
-      expect(page).not_to have_css 'audio'
-    end
+  it 'delete demotrack', js: true do
+    user.demotracks.attach(io: File.open(Rails.root.join('spec/audio/demotrack.mp3')), filename: 'demotrack.mp3')
+    visit user_path(user)
+    click_on I18n.t('demotracks.demotracks.delete_track')
+    expect(page).not_to have_link 'demotrack.mp3'
+    expect(page).not_to have_css 'audio'
   end
 end

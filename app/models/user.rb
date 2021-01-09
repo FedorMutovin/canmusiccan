@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_one_attached :avatar
   has_many_attached :demotracks
   has_many :authorizations, dependent: :destroy
+  has_many :spotify_tracks, dependent: :destroy
 
   validates :demotracks, blob: { content_type: :audio, size_range: 0..5.megabytes }
 
