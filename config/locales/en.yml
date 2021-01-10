@@ -12,7 +12,7 @@ en:
   users:
     show:
       demo: "Demotracks"
-      spotify_tracks: "Tracks From Spotify"
+      spotify_tracks: "Tracks from Spotify"
   demotracks:
     format_error: "You must add only audio file"
     demotracks:
@@ -21,3 +21,12 @@ en:
       add_demotrack_info: "Add your new demotrack"
       new_demotrack: "New Demotrack"
       add_demotrack: 'Add Demotrack'
+  spotify_tracks:
+    add_track: "Add Track"
+    search:
+      search_track: "Search track on Spotify"
+      enter_track_name: "Enter track name"
+      search: "Search"
+    tracks:
+      delete_track: "Delete track"
+      add_tracks_info: "Add some tracks with Spotify search"

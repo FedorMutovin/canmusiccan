@@ -35,6 +35,7 @@ gem 'omniauth-spotify'
 gem 'activestorage-validator'
 gem 'cancancan'
 gem 'image_processing', '~> 1.2'
+gem 'rspotify'
 gem 'slim-rails'
 
 group :development, :test do
@@ -67,6 +68,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'capybara-email'
+  gem 'database_cleaner-active_record'
   gem 'launchy'
   gem 'rails-controller-testing'
   gem 'shoulda-matchers'

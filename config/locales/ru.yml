@@ -12,13 +12,22 @@ ru:
   users:
     show:
       demo: "Демо"
-      spotify_tracks: "Трэки из Spotify"
+      spotify_tracks: "Треки из Spotify"
   demotracks:
     format_error: "Вы можете добавить только аудио файл"
     demotracks:
-      delete_track: "Удалить трэк"
+      delete_track: "Удалить трек"
     form:
       add_demotrack_info: "Добавь своё новое демо"
       new_demotrack: "Новое демо"
       add_demotrack: 'Добавить демо'
+  spotify_tracks:
+    add_track: "Добавить трек"
+    search:
+      search_track: "Найти трек на Spotify"
+      enter_track_name: "Введите название трека"
+      search: "Найти"
+    tracks:
+      delete_track: "Удалить трек"
+      add_tracks_info: "Воспользуйся поиском треков на Spotify, чтобы добавить их к себе"
 
