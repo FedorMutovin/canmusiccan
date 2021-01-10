@@ -3,7 +3,7 @@
     - if resource
       - resource.each do | track |
         - if track.preview_url
-          p.col.bg-white.border id = "spotify-track-#{track.id}"
+          p.col.bg-white.border id = "found-spotify-track-#{track.id}"
             = image_tag(track.album.images[0]["url"], size: '100', class: 'mt-2')
             br
             = track.artists[0].name
@@ -12,4 +12,5 @@
             audio(controls)
               source src="#{track.preview_url}"
             br
-            = link_to t('spotify_tracks.add_track'), user_spotify_tracks_path(track), class: "btn btn-outline-success btn-sm mb-2", remote: true
+            = link_to t('spotify_tracks.add_track'), spotify_tracks_path(track_id: track.id),
+                    method: :post, class: "btn btn-outline-success btn-sm mb-2", remote: true

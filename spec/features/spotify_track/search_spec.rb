@@ -11,8 +11,9 @@ describe 'User can search tracks from spotify', "
     sign_in(user)
     visit user_path(user)
   end
+
   it 'search track', js: true do
-    fill_in "track_name", with: "Love"
+    fill_in 'track_name', with: 'Love'
     click_on I18n.t('spotify_tracks.search.search')
     expect(page).to have_css 'audio'
     expect(page).to have_css 'img'
@@ -20,7 +21,7 @@ describe 'User can search tracks from spotify', "
   end
 
   it 'is not search track', js: true do
-    fill_in "track_name", with: ""
+    fill_in 'track_name', with: ''
     click_on I18n.t('spotify_tracks.search.search')
     expect(page).not_to have_css 'audio'
     expect(page).not_to have_css 'img'

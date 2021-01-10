@@ -18,10 +18,10 @@ class DemotracksController < ApplicationController
   private
 
   def demotrack
-    @demotrack = ActiveStorage::Attachment.find(params[:id])
+    @demotrack ||= ActiveStorage::Attachment.find(params[:id])
   end
 
   def user
-    @user = User.find(params[:user_id])
+    @user ||= User.find(params[:user_id])
   end
 end

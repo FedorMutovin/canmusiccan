@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_09_060155) do
+ActiveRecord::Schema.define(version: 2021_01_10_131240) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2021_01_09_060155) do
     t.string "preview", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["spotify_id", "user_id"], name: "index_spotify_tracks_on_spotify_id_and_user_id", unique: true
     t.index ["user_id"], name: "index_spotify_tracks_on_user_id"
   end
 

@@ -3,7 +3,7 @@
     .row
       - if resource.demotracks.attached?
         - resource.demotracks.each do | demotrack |
-          p.col.bg-white.border-bottom.border-right.border-left id = "demotrack-#{demotrack.id}"
+          p.col-6.bg-white.border id = "demotrack-#{demotrack.id}"
             = link_to demotrack.filename.to_s, url_for(demotrack), class: 'text-success'
             br
             audio(controls)

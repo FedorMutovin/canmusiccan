@@ -11,8 +11,8 @@
         = render 'demotracks/demotracks', resource: @user
         = render 'demotracks/form', resource: @user if can? :create, @user.demotracks
       .tab-pane.fade id="tracks-from-spotify" role="tracks-from-spotify" aria-labelledby="tracks-from-spotify-tab"
-        = render 'spotify_tracks/tracks'
+        = render 'spotify_tracks/tracks', resource: @user
   .col-4.border-left
     = render 'spotify_tracks/search'
-    .spotify-tracks
+    .found-spotify-tracks
 

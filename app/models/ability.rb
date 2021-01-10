@@ -14,5 +14,8 @@ class Ability
       user.id.eql?(file.record.id)
     end
     can :create, ActiveStorage::Attached::Many, record: user
+    can :create, SpotifyTrack
+    can :destroy, SpotifyTrack, user_id: user.id
+    can :search_tracks, :all
   end
 end
