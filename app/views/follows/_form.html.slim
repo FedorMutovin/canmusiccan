@@ -1,0 +1,8 @@
+.follow-button
+  - unless resource.eql?(current_user)
+    - if resource.followed_by?(current_user)
+      = form_tag unfollow_path(user_id: resource.id), method: :post, remote: true do
+        = button_tag t('.unfollow'), class: 'btn btn-outline-success'
+    - else
+      = form_tag follow_path(user_id: resource.id), method: :post, remote: true do
+        = button_tag t('.follow'), class: 'btn btn-outline-success'

@@ -17,5 +17,8 @@ class Ability
     can :create, SpotifyTrack
     can :destroy, SpotifyTrack, user_id: user.id
     can :search_tracks, :all
+    can :update, User, id: user.id
+    can :create, Follow
+    can :destroy, Follow, user_id: user.id
   end
 end

@@ -1,4 +1,14 @@
 .row
+  .col-4.pb-3.pt-3
+    - if @user.avatar.attached?
+      = image_tag @user.avatar.variant(resize: "250x250!"), class: "rounded-circle"
+  .col-6.mt-5
+    h3
+      = @user.email
+      = render 'follows/follows_count', resource: @user
+      .mt-5
+        = render 'follows/form', resource: @user
+        = link_to t('.edit'), edit_user_registration_path, class: 'btn btn-outline-success' if can? :update, @user
   .col-8
     ul.nav.nav-tabs id="myTab" role="tablist"
       li.nav-item
