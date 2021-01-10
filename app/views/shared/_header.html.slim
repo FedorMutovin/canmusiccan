@@ -1,16 +1,23 @@
-nav.navbar.navbar-dark.border-bottom.bg-success
-  .navbar-text
-    = link_to t('.en'), locale: :en
-    = link_to t('.ru'), locale: :ru
-  = link_to "CanMusicCan", root_path, class: "navbar-brand"
-  .navbar-text
-    - if user_signed_in?
-      - if current_user.avatar.attached?
-        = link_to image_tag(current_user.avatar.variant(resize: "50x50!"), class: "rounded-circle"), user_path(current_user)
-      - else
-        = link_to t('.show'), user_path(current_user)
-      = link_to t('.edit'), edit_user_registration_path
-      = link_to  t('.logout'), destroy_user_session_path, method: :delete
-    - else
-      = link_to  t('.log_in'), new_user_session_path
-      = link_to  t('.sign_up'), new_user_registration_path
+nav.navbar.navbar-expand-lg.navbar-dark.bg-success
+  .container
+    = link_to "CanMusicCan", root_path, class: "navbar-brand"
+    button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbar9"
+      span class="navbar-toggler-icon"
+    .navbar-collapse.collapse id="navbar9"
+      ul.navbar-nav.ml-auto
+        - if user_signed_in?
+          - if current_user.avatar.attached?
+            li.nav-item
+              = link_to image_tag(current_user.avatar.variant(resize: "50x50!"), class: "rounded-circle"), user_path(current_user)
+          - else
+            li.nav-item.mt-1
+              = link_to t('.show'), user_path(current_user), class: "nav-link"
+          li.nav-item.mt-1
+            = link_to t('.logout'), destroy_user_session_path, method: :delete, class: "nav-link"
+        - else
+          li.nav-item
+            = link_to t('.log_in'), new_user_session_path, class: "nav-link"
+          li.nav-item
+            = link_to t('.sign_up'), new_user_registration_path, class: "nav-link"
+  = link_to t('.en'), locale: :en
+  = link_to t('.ru'), locale: :ru

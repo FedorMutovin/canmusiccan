@@ -1,7 +1,7 @@
 <div class="row justify-content-center mt-3">
   <div class="col col-md-4">
-    <h2><%= t(".sign_up") %></h2>
-    <div class="card border-primary">
+    <h2 class="text-success"><%= t(".sign_up") %></h2>
+    <div class="card border-success">
       <div class="card-body">
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>

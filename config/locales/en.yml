@@ -1,18 +1,18 @@
 en:
   shared:
     header:
-      en: "English"
+      en: "English|"
       ru: "Russian"
       logout: "Log Out"
       log_in: "Log In"
       sign_up: "Sign Up"
       welcome: "Welcome, %{email} "
-      edit: "Edit Account"
       show: "My Account"
   users:
     show:
       demo: "Demotracks"
       spotify_tracks: "Tracks from Spotify"
+      edit: "Edit Account"
   demotracks:
     format_error: "You must add only audio file"
     demotracks:
@@ -30,3 +30,10 @@ en:
     tracks:
       delete_track: "Delete track"
       add_tracks_info: "Add some tracks with Spotify search"
+  follows:
+    follows_count:
+      followers: "Followers"
+      follow: "Follow"
+    form:
+      follow: "Follow"
+      unfollow: "Unfollow"

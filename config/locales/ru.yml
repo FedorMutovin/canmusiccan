@@ -1,18 +1,18 @@
 ru:
   shared:
     header:
-      en: "Английский"
+      en: "Английский|"
       ru: "Русский"
       logout: "Выйти"
       log_in: "Войти"
       sign_up: "Зарегистрироваться"
       welcome: "Добро пожаловать, %{email} "
-      edit: "Изменить профиль"
       show: "Мой Аккаунт"
   users:
     show:
       demo: "Демо"
       spotify_tracks: "Треки из Spotify"
+      edit: "Изменить профиль"
   demotracks:
     format_error: "Вы можете добавить только аудио файл"
     demotracks:
@@ -30,4 +30,11 @@ ru:
     tracks:
       delete_track: "Удалить трек"
       add_tracks_info: "Воспользуйся поиском треков на Spotify, чтобы добавить их к себе"
+  follows:
+    follows_count:
+      followers: "Подписчики"
+      follow: "Подписки"
+    form:
+      follow: "Подписаться"
+      unfollow: "Отписаться"
 

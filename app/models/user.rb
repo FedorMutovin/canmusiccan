@@ -15,6 +15,9 @@ class User < ApplicationRecord
 
   validates :demotracks, blob: { content_type: :audio, size_range: 0..5.megabytes }
 
+  acts_as_follower
+  acts_as_followable
+
   def self.find_for_oauth(auth)
     FindForOauth.new(auth).call
   end
