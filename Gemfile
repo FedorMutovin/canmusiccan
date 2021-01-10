@@ -36,6 +36,7 @@ gem 'activestorage-validator'
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 gem 'cancancan'
 gem 'image_processing', '~> 1.2'
+gem 'mailboxer', github: 'mailboxer/mailboxer'
 gem 'rspotify'
 gem 'slim-rails'
 

@@ -1,0 +1,6 @@
+h1 All Conversations
+
+- @conversations.each do |conversation|
+  = link_to "Беседа", conversation_path(conversation)
+
+= link_to "New Conversation", new_conversation_path
