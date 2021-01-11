@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
   resources :users, only: :show do
     resources :demotracks, only: %i[create destroy], shallow: true
+    resources :conversations, shallow: true
   end
 
   resources :spotify_tracks, only: %i[create destroy]
@@ -14,8 +15,4 @@ Rails.application.routes.draw do
 
   match :follow, to: 'follows#create', as: :follow, via: :post
   match :unfollow, to: 'follows#destroy', as: :unfollow, via: :post
-
-  resources :conversations do
-    resources :messages
-  end
 end

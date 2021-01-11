@@ -17,7 +17,6 @@ class User < ApplicationRecord
 
   acts_as_follower
   acts_as_followable
-  acts_as_messageable
 
   def self.find_for_oauth(auth)
     FindForOauth.new(auth).call
