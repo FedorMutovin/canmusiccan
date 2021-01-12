@@ -17,4 +17,4 @@ div class="tracks-#{resource.id}"
             = link_to t('spotify_tracks.tracks.delete_track'), spotify_track_path(track),
                     class: "btn btn-outline-success btn-sm mb-2", method: :delete, remote: true if can? :destroy, track
       - else
-        = t('spotify_tracks.tracks.add_tracks_info')
+        = t('spotify_tracks.tracks.add_tracks_info') if resource.eql?(current_user)

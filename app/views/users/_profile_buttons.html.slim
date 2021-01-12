@@ -2,11 +2,14 @@
   .row
     - if @user.eql?(current_user)
       .col-3
-        = link_to t('.messages'), user_conversations_path(@user), class: 'btn btn-outline-success'
+        = link_to t('.messages'), conversations_path, class: 'btn btn-outline-success'
+        h5
+          .badge.badge-pill.badge-success
+            = unread_messages_count unless unread_messages_count.zero?
       .col-7
         = link_to t('.edit'), edit_user_registration_path, class: 'btn btn-outline-success' if can? :update, @user
     - else
       .col-3
         = render 'follows/form', resource: @user
       .col-5
-        = render 'conversations/send_message', resource: @user
+        = render 'messages/form', resource: @user

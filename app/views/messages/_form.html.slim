@@ -1,0 +1,13 @@
+button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModal" Send message
+div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
+  div class="modal-dialog" role="document"
+    div class="modal-content"
+      .successful_response
+        div class="modal-header"
+          h5 class="modal-title" id="exampleModalLabel" New message
+          button type="button" class="close" data-dismiss="modal" aria-label="Close"
+            span aria-hidden="true"&times
+        div class="modal-body"
+          = form_tag messages_path(sender_id: current_user.id, receiver_id: resource.id), method: :post, class: "form-group", remote: true do
+            = text_area_tag :body, nil, placeholder: "Your message", class: "form-control"
+            = submit_tag "Send", class: "form-control btn btn-outline-success"

@@ -1,7 +1,0 @@
-- @conversation.receipts_for(current_user).each do |receipt|
-  = receipt.message.sender.email
-  br
-  = receipt.message.body
-= form_tag conversation_messages_path(@conversation)
-  = text_area_tag :body
-  = submit_tag

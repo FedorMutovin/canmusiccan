@@ -1,13 +1,18 @@
-.row
-  .col-3
-    div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical"
-      a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"Home
-      a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"Profile
-      a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"Messages
-      a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false"Settings
-  .col-9
-    div class="tab-content" id="v-pills-tabContent"
-      div class="tab-pane fade" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab"1
-      div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"2
-      div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"3
-      div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab"4
+- @conversations.each do |conversation|
+  .row.bg-white.border.border-success.rounded.mt-2
+    .col-3.border-right.border-success
+      .row
+        .col-2
+          - if conversation.recipient(current_user).avatar.attached?
+            = image_tag conversation.recipient(current_user).avatar.variant(resize: "50x50!"), class: "rounded-circle mt-2 mb-2"
+        .col-6
+          = link_to conversation.recipient(current_user).email,
+                  messages_path(conversation_id: conversation.id),
+                  class: "nav-link mt-2", id: "conversation-#{conversation.id}"
+    .col-8.mt-3
+      = conversation.messages.last.body
+    .col-1
+      h4
+        - if !conversation.unread_message_count(current_user).zero?
+          .badge.badge-pill.badge-success.mt-3
+            = conversation.unread_message_count(current_user)
