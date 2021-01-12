@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :conversations, only: :index
-  resources :messages, only: [:index, :create]
+  resources :messages, only: %i[index create]
 
   resources :spotify_tracks, only: %i[create destroy]
 
