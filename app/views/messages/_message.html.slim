@@ -1,8 +1,11 @@
-- if message.body
+.media.bg-white
   li.list-group-item
-    h5.border-bottom
-      = message.user.email
-    p
-      = message.time
-    p
-      = message.body
+    .media-left
+      = image_tag message.user.avatar.variant(resize: "50x50!"), class: "rounded-circle" if message.user.avatar.attached?
+    .media-body
+      h5.media-heading
+        = message.user.email
+        small.text-muted
+          = message.time
+      p
+        = message.body

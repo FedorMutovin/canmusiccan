@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!
-  skip_authorization_check
+  authorize_resource
 
   before_action :conversation, only: %i[index create]
 
@@ -19,7 +19,7 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.permit(:body, :user_id)
+    params.permit(:body)
   end
 
   def conversation

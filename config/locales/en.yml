@@ -39,10 +39,16 @@ en:
     form:
       follow: "Follow"
       unfollow: "Unfollow"
-  conversations:
-    send_message:
+  messages:
+    index:
+      send: "Send"
+      your_message: "Your message"
+    form:
       send_message: "Send message"
       new_message: "New message"
       send: "Send"
-      close: "Close"
+      your_message: "Your message"
+  conversations:
+    index:
+      empty_conversations_info: "Your conversations is empty "
 

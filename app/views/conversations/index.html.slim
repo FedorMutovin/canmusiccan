@@ -1,18 +1,22 @@
-- @conversations.each do |conversation|
-  .row.bg-white.border.border-success.rounded.mt-2
-    .col-3.border-right.border-success
-      .row
-        .col-2
-          - if conversation.recipient(current_user).avatar.attached?
-            = image_tag conversation.recipient(current_user).avatar.variant(resize: "50x50!"), class: "rounded-circle mt-2 mb-2"
-        .col-6
-          = link_to conversation.recipient(current_user).email,
-                  messages_path(conversation_id: conversation.id),
-                  class: "nav-link mt-2", id: "conversation-#{conversation.id}"
-    .col-8.mt-3
-      = conversation.messages.last.body
-    .col-1
-      h4
-        - if !conversation.unread_message_count(current_user).zero?
-          .badge.badge-pill.badge-success.mt-3
-            = conversation.unread_message_count(current_user)
+- if @conversations.empty?
+  h3
+    = t('.empty_conversations_info')
+- else
+  - @conversations.each do |conversation|
+    .row.bg-white.border.border-success.rounded.mt-2
+      .col-3.border-right.border-success
+        .row
+          .col-2
+            - if conversation.recipient(current_user).avatar.attached?
+              = image_tag conversation.recipient(current_user).avatar.variant(resize: "50x50!"), class: "rounded-circle mt-2 mb-2"
+          .col-6
+            = link_to conversation.recipient(current_user).email,
+                    messages_path(conversation_id: conversation.id),
+                    class: "nav-link mt-2", id: "conversation-#{conversation.id}"
+      .col-8.mt-3
+        = conversation.messages.last.body
+      .col-1
+        h4
+          - if !conversation.unread_message_count(current_user).zero?
+            .badge.badge-pill.badge-success.mt-3
+              = conversation.unread_message_count(current_user)

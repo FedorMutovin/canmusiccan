@@ -42,10 +42,6 @@ describe 'User can add spotify tracks to his collection', "
       expect(page).to have_content I18n.t('spotify_tracks.add_track')
       first('.btn-outline-success').click
     end
-    within ".tracks-#{other_user.id}" do
-      expect(page).not_to have_css 'audio'
-      expect(page).not_to have_css 'img'
-    end
     visit user_path(user)
     click_on I18n.t('users.show.spotify_tracks')
     within ".tracks-#{user.id}" do

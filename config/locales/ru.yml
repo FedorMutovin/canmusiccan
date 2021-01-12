@@ -39,10 +39,16 @@ ru:
     form:
       follow: "Подписаться"
       unfollow: "Отписаться"
-  conversations:
-    send_message:
+  messages:
+    index:
+      send: "Отправить"
+      your_message: "Твое сообщение"
+    form:
       send_message: "Написать сообщение"
       new_message: "Новое сообщение"
       send: "Отправить"
-      close: "Закрыть"
+      your_message: "Твое сообщение"
+  conversations:
+    index:
+      empty_conversations_info: "У вас нет действующих бесед"
 

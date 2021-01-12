@@ -20,5 +20,6 @@ class Ability
     can :update, User, id: user.id
     can :create, Follow
     can :destroy, Follow, user_id: user.id
+    can :create, Message
   end
 end
