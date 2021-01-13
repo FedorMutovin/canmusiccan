@@ -7,8 +7,8 @@ describe 'User can send messages', "
 " do
   let(:sender) { create(:user) }
   let(:receiver) { create(:user) }
-  let(:other_conversation) { create(:conversation, sender: sender, receiver: receiver) }
-  let!(:message) { create(:message, conversation: other_conversation, user: sender, body: '123') }
+  let(:conversation) { create(:conversation, sender: sender, receiver: receiver) }
+  let!(:message) { create(:message, conversation: conversation, user: sender, body: '123') }
 
   it 'sender tries to send message to receiver', js: true do
     sign_in(sender)

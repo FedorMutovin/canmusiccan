@@ -8,11 +8,13 @@
 
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= action_cable_meta_tag %>
+    <%= Gon::Base.render_data %>
   </head>
 
   <body class="bg-light">
     <%= render 'shared/header' %>
-    <div class="container ">
+    <div class="container bg-white" style="min-height: 100vh">
       <%= render 'shared/flash' %>
       <%= yield %>
     </div>
