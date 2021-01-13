@@ -12,7 +12,9 @@ ru:
     show:
       demo: "Демо"
       spotify_tracks: "Треки из Spotify"
+    profile_buttons:
       edit: "Изменить профиль"
+      messages: "Сообщения"
   demotracks:
     format_error: "Вы можете добавить только аудио файл"
     demotracks:
@@ -37,4 +39,16 @@ ru:
     form:
       follow: "Подписаться"
       unfollow: "Отписаться"
+  messages:
+    index:
+      send: "Отправить"
+      your_message: "Твое сообщение"
+    form:
+      send_message: "Написать сообщение"
+      new_message: "Новое сообщение"
+      send: "Отправить"
+      your_message: "Твое сообщение"
+  conversations:
+    index:
+      empty_conversations_info: "У вас нет действующих бесед"
 

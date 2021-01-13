@@ -12,7 +12,9 @@ en:
     show:
       demo: "Demotracks"
       spotify_tracks: "Tracks from Spotify"
+    profile_buttons:
       edit: "Edit Account"
+      messages: "Messages"
   demotracks:
     format_error: "You must add only audio file"
     demotracks:
@@ -37,3 +39,16 @@ en:
     form:
       follow: "Follow"
       unfollow: "Unfollow"
+  messages:
+    index:
+      send: "Send"
+      your_message: "Your message"
+    form:
+      send_message: "Send message"
+      new_message: "New message"
+      send: "Send"
+      your_message: "Your message"
+  conversations:
+    index:
+      empty_conversations_info: "Your conversations is empty "
+

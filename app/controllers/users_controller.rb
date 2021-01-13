@@ -3,7 +3,9 @@ class UsersController < ApplicationController
   before_action :user, only: :show
   authorize_resource
 
-  def show; end
+  def show
+    @unread_messages_count = Conversation.unread_messages_count(current_user)
+  end
 
   private
 

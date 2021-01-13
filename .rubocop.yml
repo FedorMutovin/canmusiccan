@@ -80,3 +80,6 @@ RSpec/StubbedMock:
 
 RSpec/MessageSpies:
   Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: false

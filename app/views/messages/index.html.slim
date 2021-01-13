@@ -1,0 +1,6 @@
+ul.list-group.list-group-flush.messages
+  = render @messages
+
+= form_tag messages_path(conversation_id: @conversation.id), method: :post, class: "form-group", remote: true do
+  = text_area_tag :body, nil, placeholder: t('.your_message'), class: "form-control"
+  = submit_tag t('.send'), class: "btn btn-outline-success "
