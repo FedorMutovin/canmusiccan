@@ -3,4 +3,6 @@ class Community < ApplicationRecord
   belongs_to :creator, class_name: 'User'
 
   has_one_attached :avatar
+
+  validates :name, presence: true
 end

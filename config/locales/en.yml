@@ -51,4 +51,14 @@ en:
   conversations:
     index:
       empty_conversations_info: "Your conversations is empty "
+  communities:
+    community_created_info: 'Your community successfully created.'
+    index:
+      new_community: "Create new community"
+    new:
+      name: "Name"
+      avatar: "Avatar"
+      description: "Description"
+      create: "Create Community"
+
 

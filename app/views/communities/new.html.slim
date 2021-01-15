@@ -1,0 +1,9 @@
+= render 'shared/errors', resource: @community
+= form_with model: @community do |f|
+  = f.label :name, t('.name')
+  = f.text_field :name
+  = f.label :description, t('.description')
+  = f.text_area :description
+  = f.label :avatar, t('.avatar')
+  = f.file_field :avatar
+  = f.submit t('.create')

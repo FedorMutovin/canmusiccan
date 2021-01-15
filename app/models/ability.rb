@@ -21,5 +21,6 @@ class Ability
     can :create, Follow
     can :destroy, Follow, user_id: user.id
     can :create, Message
+    can :create, Community
   end
 end

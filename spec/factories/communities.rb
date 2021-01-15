@@ -8,5 +8,9 @@ FactoryBot.define do
         community.avatar.attach(io: File.open(Rails.root.join('spec/images/avatar.jpg')), filename: 'avatar.jpg')
       end
     end
+
+    trait :invalid do
+      name { nil }
+    end
   end
 end

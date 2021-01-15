@@ -9,7 +9,7 @@ describe 'User can show a community', "
   let(:creator) { create(:user) }
   let!(:community) { create(:community, :with_avatar, creator: creator) }
 
-  it 'Authenticated user try to see communities' do
+  it 'try to show community' do
     sign_in(user)
     visit communities_path
     click_on community.name

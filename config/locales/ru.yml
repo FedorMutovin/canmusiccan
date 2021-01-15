@@ -51,4 +51,13 @@ ru:
   conversations:
     index:
       empty_conversations_info: "У вас нет действующих бесед"
+  communities:
+    community_created_info: 'Сообщество успешно создано'
+    index:
+      new_community: "Создать новое сообщество"
+    new:
+      name: "Название"
+      avatar: "Аватар"
+      description: "Описание"
+      create: "Создать сообщество"
 
