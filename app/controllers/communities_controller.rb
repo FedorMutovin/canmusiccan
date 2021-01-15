@@ -1,6 +1,6 @@
 class CommunitiesController < ApplicationController
   before_action :authenticate_user!
-  before_action :community, only: %i[show new]
+  before_action :community, only: %i[show new edit update]
   authorize_resource
 
   def index
@@ -18,6 +18,18 @@ class CommunitiesController < ApplicationController
       redirect_to @community, notice: t('.community_created_info')
     else
       render :new
+    end
+  end
+
+  def edit; end
+
+  def update
+    @community.update(community_params)
+
+    if @community.save
+      redirect_to @community, notice: t('.community_created_info')
+    else
+      render :edit
     end
   end
 

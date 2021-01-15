@@ -121,4 +121,57 @@ RSpec.describe CommunitiesController, type: :controller do
       end
     end
   end
+
+  describe 'GET #edit' do
+    context 'when authenticated user' do
+      before do
+        login(user)
+        get :edit, params: { id: community }
+      end
+
+      it 'renders edit view' do
+        expect(response).to render_template :edit
+      end
+    end
+
+    context 'when unauthenticated user' do
+      before { get :edit, params: { id: community } }
+
+      it 'is not show edit community' do
+        expect(response.status).to eq 302
+      end
+    end
+  end
+
+  describe 'PATCH #update' do
+    before { login(user) }
+
+    context 'with valid attributes' do
+      it 'saves a new community in the database' do
+        patch :update, params: { id: community, community: { name: 'new name', description: 'new description' } }
+        community.reload
+        expect(community.name).to eq 'new name'
+        expect(community.description).to eq 'new description'
+      end
+
+      it 'renders update view' do
+        patch :update, params: { id: community, community: attributes_for(:community) }
+        expect(response).to redirect_to assigns(:community)
+      end
+    end
+
+    context 'with invalid attributes' do
+      before { patch :update, params: { id: community, community: attributes_for(:community, :invalid) } }
+
+      it 'does not change answer attributes' do
+        community.reload
+        expect(community.name).to eq community.name
+        expect(community.description).to eq community.description
+      end
+
+      it 'renders update view' do
+        expect(response).to render_template :edit
+      end
+    end
+  end
 end

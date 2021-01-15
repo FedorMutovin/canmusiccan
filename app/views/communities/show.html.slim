@@ -3,3 +3,4 @@ p
     = image_tag @community.avatar.variant(resize: "50x50!"), class: "rounded-circle mt-2 mb-2"
   = @community.name
   = @community.description
+  = link_to t('.edit'), edit_community_path(@community) if can? :update, @community

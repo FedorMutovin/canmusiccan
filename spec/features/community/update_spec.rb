@@ -5,12 +5,14 @@ describe 'User can create a community', "
  As an authenticated user
  I'd like to be able to create a community
 " do
-  let(:user) { create(:user) }
+  let(:creator) { create(:user) }
+  let!(:community) { create(:community, :with_avatar, creator: creator) }
 
-  it 'try to create community with valid attributes' do
-    sign_in(user)
+  it 'try to update community with valid attributes' do
+    sign_in(creator)
     visit communities_path
-    click_on I18n.t('communities.index.new_community')
+    click_on community.name
+    click_on I18n.t('communities.show.edit')
     fill_in I18n.t('communities.form.name'), with: 'Name'
     fill_in I18n.t('communities.form.description'), with: 'Description'
     attach_file I18n.t('communities.form.avatar'), Rails.root.join('spec/images/avatar.jpg')
@@ -21,9 +23,11 @@ describe 'User can create a community', "
   end
 
   it 'try to create community with invalid attributes' do
-    sign_in(user)
+    sign_in(creator)
     visit communities_path
-    click_on I18n.t('communities.index.new_community')
+    click_on community.name
+    click_on I18n.t('communities.show.edit')
+    fill_in I18n.t('communities.form.name'), with: ''
     fill_in I18n.t('communities.form.description'), with: 'Description'
     attach_file I18n.t('communities.form.avatar'), Rails.root.join('spec/images/avatar.jpg')
     click_on I18n.t('communities.form.save')

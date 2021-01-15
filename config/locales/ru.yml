@@ -53,11 +53,14 @@ ru:
       empty_conversations_info: "У вас нет действующих бесед"
   communities:
     community_created_info: 'Сообщество успешно создано'
+    community_updated_info: 'Сообщество успешно обновлено'
     index:
       new_community: "Создать новое сообщество"
-    new:
+    form:
       name: "Название"
       avatar: "Аватар"
       description: "Описание"
-      create: "Создать сообщество"
+      save: "Сохранить"
+    show:
+      edit: "Изменить информацию о сообществе"
 
