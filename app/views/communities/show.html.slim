@@ -4,3 +4,4 @@ p
   = @community.name
   = @community.description
   = link_to t('.edit'), edit_community_path(@community) if can? :update, @community
+  = link_to t('.destroy'), community_path(@community), data: { confirm: "Are you sure?" }, method: :delete if can? :destroy, @community

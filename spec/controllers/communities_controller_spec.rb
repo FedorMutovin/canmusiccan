@@ -174,4 +174,32 @@ RSpec.describe CommunitiesController, type: :controller do
       end
     end
   end
+
+  describe 'DELETE #destroy' do
+    let!(:community) { create(:community, creator: user) }
+
+    context 'with sign in' do
+      before { login(user) }
+
+      it 'deletes the community' do
+        expect { delete :destroy, params: { id: community } }.to change(Community, :count).by(-1)
+      end
+
+      it 'redirects to index' do
+        delete :destroy, params: { id: community }
+        expect(response).to redirect_to communities_path
+      end
+    end
+
+    context 'without sign in' do
+      it 'does not delete the community' do
+        expect { delete :destroy, params: { id: community } }.not_to change(Community, :count)
+      end
+
+      it 'redirect to sign in' do
+        delete :destroy, params: { id: community }
+        expect(response).to redirect_to new_user_session_path
+      end
+    end
+  end
 end

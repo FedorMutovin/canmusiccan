@@ -54,6 +54,7 @@ en:
   communities:
     community_created_info: 'Your community successfully created.'
     community_updated_info: 'Your community successfully updated.'
+    community_deleted_info: 'Your community successfully deleted.'
     index:
       new_community: "Create new community"
     form:
@@ -63,5 +64,6 @@ en:
       save: "Save"
     show:
       edit: "Edit community"
+      destroy: "Delete community"
 
 

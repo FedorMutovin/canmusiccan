@@ -54,6 +54,7 @@ ru:
   communities:
     community_created_info: 'Сообщество успешно создано'
     community_updated_info: 'Сообщество успешно обновлено'
+    community_deleted_info: 'Сообщество успешно удалено.'
     index:
       new_community: "Создать новое сообщество"
     form:
@@ -63,4 +64,5 @@ ru:
       save: "Сохранить"
     show:
       edit: "Изменить информацию о сообществе"
+      destroy: "Удалить сообщество"
 
