@@ -8,9 +8,11 @@
       <div class="col-sm-4">
         <% if resource.avatar.attached? %>
           <%= image_tag resource.avatar.variant(resize: "100x100!"), class: "rounded-circle" %>
+        <% else %>
+          <%= image_pack_tag "media/images/default_avatar.png", style: "height: 100px; weight: 100px", class: "rounded-circle" %>
         <% end %>
       </div>
-      <div class="col-sm-8">
+      <div class="col-sm-6">
         <%= f.label :avatar, t('.avatar') %><br />
         <%= f.file_field :avatar %>
       </div>

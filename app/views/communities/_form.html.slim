@@ -1,11 +1,20 @@
 = render 'shared/errors', resource: resource
 = form_with model: resource do |f|
-  = f.label :name, t('.name')
-  = f.text_field :name
-  = f.label :description, t('.description')
-  = f.text_area :description
-  - if resource&.avatar.attached?
-    = image_tag resource.avatar.variant(resize: "100x100!"), class: "rounded-circle"
-  = f.label :avatar, t('.avatar')
-  = f.file_field :avatar
-  = f.submit t('.save')
+  .field
+    .row
+      .col-3
+        - if resource&.avatar.attached?
+          = image_tag resource.avatar.variant(resize: "100x100!"), class: "rounded-circle"
+        - else
+          = image_pack_tag "media/images/default_community_avatar.png", style: "height: 100px; weight: 100px", class: "rounded-circle"
+      .col-sm-4
+        = f.label :avatar, t('.avatar')
+        = f.file_field :avatar
+  .field
+    = f.label :name, t('.name')
+    = f.text_field :name
+  .field
+    = f.label :description, t('.description')
+    = f.text_area :description
+  .actions
+    = f.submit t('.save')

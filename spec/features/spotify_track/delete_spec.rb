@@ -18,8 +18,10 @@ describe 'User can delete his tracks from spotify', "
     expect(page).to have_css 'audio'
     expect(page).to have_css 'img'
     click_on I18n.t('spotify_tracks.tracks.delete_track')
-    expect(page).not_to have_css 'audio'
-    expect(page).not_to have_css 'img'
+    within '.profile-tabs' do
+      expect(page).not_to have_css 'audio'
+      expect(page).not_to have_css 'img'
+    end
   end
 
   it 'is not delete spotify track', js: true do

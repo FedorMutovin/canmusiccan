@@ -8,6 +8,6 @@
     .col-4
       - unless resource.class.name.eql?("Community")
         h4
-          = resource.follow_count
+          = resource.following_user_count
         h5
           = t('follows.follows_count.follow')

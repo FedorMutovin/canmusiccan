@@ -1,8 +1,22 @@
-p
-  - if @community.avatar.attached?
-    = image_tag @community.avatar.variant(resize: "50x50!"), class: "rounded-circle mt-2 mb-2"
-  = @community.name
-  = @community.description
-  = render 'follows/form', resource: @community
-  = link_to t('.edit'), edit_community_path(@community) if can? :update, @community
-  = link_to t('.destroy'), community_path(@community), data: { confirm: "Are you sure?" }, method: :delete if can? :destroy, @community
+.row
+  .col-4.pb-3.pt-3
+    - if @community.avatar.attached?
+      = image_tag @community.avatar.variant(resize: "250x250!"), class: "rounded-circle mt-2 mb-2"
+    - else
+      = image_pack_tag "media/images/default_community_avatar.png", style: "height: 250px; weight: 250px", class: "rounded-circle mt-2 mb-2"
+  .col-6.mt-5
+    h3
+      = @community.name
+      = render 'follows/follows_count', resource: @community
+      = render 'community_buttons', community: @community
+  .col-6
+    h4 #{t('.description')}
+    p
+      = @community.description
+  .col-8.profile-tabs
+    ul.nav.nav-tabs id="myTab" role="tablist"
+      li.nav-item
+        a.nav-link.active.text-success id="community-posts-tab" data-toggle="tab" href="#community-posts" role="tab" aria-controls="community-posts" aria-selected="true" #{t('.posts')}
+
+    .tab-content id="myTabContent"
+      .tab-pane.fade.show.active.spotify_tracks id="community-posts" role="tabpanel" aria-labelledby="community-posts-tab"

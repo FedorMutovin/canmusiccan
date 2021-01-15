@@ -23,8 +23,10 @@ describe 'User can search tracks from spotify', "
   it 'is not search track', js: true do
     fill_in 'track_name', with: ''
     click_on I18n.t('spotify_tracks.search.search')
-    expect(page).not_to have_css 'audio'
-    expect(page).not_to have_css 'img'
-    expect(page).not_to have_content I18n.t('spotify_tracks.add_track')
+    within '.search-spotify-tracks' do
+      expect(page).not_to have_css 'audio'
+      expect(page).not_to have_css 'img'
+      expect(page).not_to have_content I18n.t('spotify_tracks.add_track')
+    end
   end
 end

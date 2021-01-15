@@ -4,7 +4,7 @@ div class="tracks-#{resource.id}"
     .row
       - unless resource.spotify_tracks.empty?
         - resource.spotify_tracks.each do | track |
-          p.col-6.bg-white.border id = "spotify-track-#{track.id}"
+          p.col-6.bg-white id = "spotify-track-#{track.id}"
             = image_tag(track.image, size: '100', class: 'mt-2')
             br
             = track.artists

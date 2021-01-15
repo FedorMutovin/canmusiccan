@@ -3,12 +3,14 @@
     = t('.empty_conversations_info')
 - else
   - @conversations.each do |conversation|
-    .row.bg-white.border.border-success.rounded.mt-2
+    .row.bg-white.border-success.rounded.mt-2
       .col-3.border-right.border-success
         .row
           .col-2
             - if conversation.recipient(current_user).avatar.attached?
               = image_tag conversation.recipient(current_user).avatar.variant(resize: "50x50!"), class: "rounded-circle mt-2 mb-2"
+            - else
+              = image_pack_tag "media/images/default_avatar.png", style: "height: 50px; weight: 50px", class: "rounded-circle mt-2 mb-2"
           .col-6
             = link_to conversation.recipient(current_user).email,
                     messages_path(conversation_id: conversation.id),

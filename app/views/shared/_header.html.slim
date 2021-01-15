@@ -1,4 +1,4 @@
-nav.navbar.navbar-expand-lg.navbar-dark.bg-success
+nav.navbar.navbar-expand-lg.navbar-dark.bg-success.bs-container
   .container
     = link_to "CanMusicCan", root_path, class: "navbar-brand"
     button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbar9"
@@ -6,12 +6,14 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-success
     .navbar-collapse.collapse id="navbar9"
       ul.navbar-nav.ml-auto
         - if user_signed_in?
+          li.nav-item
+            = link_to t('.communities'), communities_path, class: "nav-link mt-1"
           - if current_user.avatar.attached?
             li.nav-item
               = link_to image_tag(current_user.avatar.variant(resize: "50x50!"), class: "rounded-circle"), user_path(current_user)
           - else
-            li.nav-item.mt-1
-              = link_to t('.show'), user_path(current_user), class: "nav-link"
+            li.nav-item
+              = link_to image_pack_tag("media/images/default_avatar.png", style: "height: 50px; weight: 50px", class: "rounded-circle"), user_path(current_user)
           li.nav-item.mt-1
             = link_to t('.logout'), destroy_user_session_path, method: :delete, class: "nav-link"
         - else

@@ -10,6 +10,7 @@ import "channels"
 import '../stylesheets/application'
 import './bootstrap_custom.js'
 import  'handlebars-loader'
+const images = require.context('images', true)
 
 Rails.start()
 Turbolinks.start()

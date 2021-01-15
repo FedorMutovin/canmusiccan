@@ -8,15 +8,17 @@ en:
       sign_up: "Sign Up"
       welcome: "Welcome, %{email} "
       show: "My Account"
+      communities: "Communities"
   users:
     show:
       demo: "Demotracks"
       spotify_tracks: "Tracks from Spotify"
+      communities: "Communities"
     profile_buttons:
       edit: "Edit Account"
       messages: "Messages"
   demotracks:
-    format_error: "You must add only audio file"
+    format_error: "You must add only audio file size no more than 5 mb"
     demotracks:
       delete_track: "Delete Track"
     form:
@@ -65,5 +67,9 @@ en:
     show:
       edit: "Edit community"
       destroy: "Delete community"
-
+      posts: "Posts"
+      description: "Description"
+    community_buttons:
+      edit: "Edit community"
+      destroy: "Destroy community"
 
