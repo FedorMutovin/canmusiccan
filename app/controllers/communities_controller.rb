@@ -15,6 +15,7 @@ class CommunitiesController < ApplicationController
     @community = Community.new(community_params.merge(creator: current_user))
 
     if @community.save
+      current_user.follow(@community)
       redirect_to @community, notice: t('.community_created_info')
     else
       render :new
