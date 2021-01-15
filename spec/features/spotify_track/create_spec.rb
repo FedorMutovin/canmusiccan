@@ -13,8 +13,10 @@ describe 'User can add spotify tracks to his collection', "
   it 'create track', js: true do
     visit user_path(user)
     click_on I18n.t('users.show.spotify_tracks')
-    expect(page).not_to have_css 'audio'
-    expect(page).not_to have_css 'img'
+    within '#tracks-from-spotify' do
+      expect(page).not_to have_css 'audio'
+      expect(page).not_to have_css 'img'
+    end
     fill_in 'track_name', with: 'Love'
     click_on I18n.t('spotify_tracks.search.search')
     within '.found-spotify-tracks' do
@@ -32,8 +34,10 @@ describe 'User can add spotify tracks to his collection', "
   it 'user create track on other_user page', js: true do
     visit user_path(other_user)
     click_on I18n.t('users.show.spotify_tracks')
-    expect(page).not_to have_css 'audio'
-    expect(page).not_to have_css 'img'
+    within '.profile-tabs' do
+      expect(page).not_to have_css 'audio'
+      expect(page).not_to have_css 'img'
+    end
     fill_in 'track_name', with: 'Love'
     click_on I18n.t('spotify_tracks.search.search')
     within '.found-spotify-tracks' do

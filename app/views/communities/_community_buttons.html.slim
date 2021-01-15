@@ -1,0 +1,11 @@
+.mt-5
+  .row
+    - if community.creator.eql?(current_user)
+      .col-3
+        = link_to t('.edit'), edit_community_path(@community), class: 'btn btn-outline-success' if can? :update, community
+      .col-7
+        = link_to t('.destroy'), community_path(@community), data: { confirm: "Are you sure?" },
+                class: 'btn btn-outline-success', method: :delete if can? :destroy, community
+    - else
+      .col-3
+        = render 'follows/form', resource: @community

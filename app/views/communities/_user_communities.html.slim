@@ -1,0 +1,11 @@
+.container
+  .row
+    - unless resource.following_by_type("Community").empty?
+      - resource.following_by_type("Community").each do | community |
+        p.col-6.bg-white id="community-#{community.id}"
+          - if community.avatar.blob
+            = image_tag(community.avatar.variant(resize: "100x100!"), class: "rounded-circle mt-2 mb-2")
+          - else
+            = image_pack_tag "media/images/default_community_avatar.png", style: "height: 100px; weight: 100px", class: "rounded-circle mt-2 mb-2"
+          br
+          = link_to community.name, community_path(community), class: "text-success"

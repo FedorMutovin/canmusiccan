@@ -8,15 +8,17 @@ ru:
       sign_up: "Зарегистрироваться"
       welcome: "Добро пожаловать, %{email} "
       show: "Мой Аккаунт"
+      communities: "Сообщества"
   users:
     show:
       demo: "Демо"
       spotify_tracks: "Треки из Spotify"
+      communities: "Сообщества"
     profile_buttons:
       edit: "Изменить профиль"
       messages: "Сообщения"
   demotracks:
-    format_error: "Вы можете добавить только аудио файл"
+    format_error: "Вы можете добавить только аудио файл, размером не более 5 мб."
     demotracks:
       delete_track: "Удалить трек"
     form:
@@ -51,4 +53,23 @@ ru:
   conversations:
     index:
       empty_conversations_info: "У вас нет действующих бесед"
+  communities:
+    community_created_info: 'Сообщество успешно создано'
+    community_updated_info: 'Сообщество успешно обновлено'
+    community_deleted_info: 'Сообщество успешно удалено.'
+    index:
+      new_community: "Создать новое сообщество"
+    form:
+      name: "Название"
+      avatar: "Аватар"
+      description: "Описание"
+      save: "Сохранить"
+    show:
+      edit: "Изменить информацию о сообществе"
+      destroy: "Удалить сообщество"
+      posts: "Посты"
+      description: "Описание"
+    community_buttons:
+      edit: "Редактировать сообщество"
+      destroy: "Удалить сообщество"
 

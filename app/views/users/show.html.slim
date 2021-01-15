@@ -1,25 +1,32 @@
 .row
   .col-4.pb-3.pt-3
-    = image_tag @user.avatar.variant(resize: "250x250!"), class: "rounded-circle" if @user.avatar.attached?
+    - if @user.avatar.attached?
+      = image_tag @user.avatar.variant(resize: "250x250!"), class: "rounded-circle" if @user.avatar.attached?
+    - else
+      = image_pack_tag "media/images/default_avatar.png", style: "height: 250px; weight: 250px", class: "rounded-circle"
   .col-6.mt-5
     h3
       = @user.email
       = render 'follows/follows_count', resource: @user
       = render 'profile_buttons', resource: @user, unread_messages_count: @unread_messages_count
-  .col-8
+  .col-8.profile-tabs
     ul.nav.nav-tabs id="myTab" role="tablist"
       li.nav-item
         a.nav-link.active.text-success id="demotracks-tab" data-toggle="tab" href="#demotracks" role="tab" aria-controls="demotracks" aria-selected="true" #{t('.demo')}
       li.nav-item
         a.nav-link.text-success id="tracks-from-spotify-tab" data-toggle="tab" href="#tracks-from-spotify" role="tab" aria-controls="tracks-from-spotify" aria-selected="false" #{t('.spotify_tracks')}
+      li.nav-item
+        a.nav-link.text-success id="communities-tab" data-toggle="tab" href="#communities" role="tab" aria-controls="communities" aria-selected="false" #{t('.communities')}
 
     .tab-content id="myTabContent"
-      .tab-pane.fade.show.active id="demotracks" role="tabpanel" aria-labelledby="demotracks-tab"
+      .tab-pane.fade.show.active.spotify_tracks id="demotracks" role="tabpanel" aria-labelledby="demotracks-tab"
         = render 'demotracks/demotracks', resource: @user
         = render 'demotracks/form', resource: @user if can? :create, @user.demotracks
       .tab-pane.fade id="tracks-from-spotify" role="tracks-from-spotify" aria-labelledby="tracks-from-spotify-tab"
         = render 'spotify_tracks/tracks', resource: @user
-  .col-4.border-left
+      .tab-pane.fade id="communities" role="communities" aria-labelledby="communities-tab"
+        = render 'communities/user_communities', resource: @user
+  .col-4.border-left.search-spotify-tracks
     = render 'spotify_tracks/search'
     .found-spotify-tracks
 

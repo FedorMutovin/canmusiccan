@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :conversations, only: :index
   resources :messages, only: %i[index create]
+  resources :communities
 
   resources :spotify_tracks, only: %i[create destroy]
 
