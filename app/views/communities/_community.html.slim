@@ -1,0 +1,4 @@
+p
+  - if community.avatar.attached?
+    = image_tag community.avatar.variant(resize: "50x50!"), class: "rounded-circle mt-2 mb-2"
+  = community.name

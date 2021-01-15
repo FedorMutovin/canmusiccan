@@ -8,6 +8,8 @@ RSpec.describe User, type: :model do
   it { is_expected.to have_many(:conversations).dependent(:destroy) }
   it { is_expected.to have_many(:conversations).dependent(:destroy).with_foreign_key('receiver_id') }
   it { is_expected.to have_many(:messages).dependent(:destroy) }
+  it { is_expected.to have_many(:communities).dependent(:destroy).with_foreign_key('creator_id') }
+  it { belong_to :community }
 
   it 'have one attached avatar' do
     expect(described_class.new.avatar).to be_an_instance_of(ActiveStorage::Attached::One)
