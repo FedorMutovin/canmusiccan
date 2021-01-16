@@ -20,3 +20,6 @@
 
     .tab-content id="myTabContent"
       .tab-pane.fade.show.active.spotify_tracks id="community-posts" role="tabpanel" aria-labelledby="community-posts-tab"
+        = render 'posts/form', resource: @community if @community.creator.eql?(current_user)
+        .posts
+          = render 'posts/posts', klass: @community

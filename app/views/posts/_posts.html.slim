@@ -1,0 +1,7 @@
+- unless klass.posts.empty?
+  - klass.posts.each do |post|
+    - unless post.new_record?
+      div id ="post-#{post.id}"
+        = post.title
+        = post.body
+        = link_to t('.destroy'), post_path(post), data: { confirm: "Are you sure?" }, method: :delete, remote: true if can? :destroy, klass

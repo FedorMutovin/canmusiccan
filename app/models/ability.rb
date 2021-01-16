@@ -22,6 +22,10 @@ class Ability
     can :destroy, Follow, user_id: user.id
     can :create, Message
     can :create, Community
+    can :create, Post
     can %i[update destroy], Community, creator_id: user.id
+    can :destroy, Post do
+      user.id.eql?(postable_id) || Community.find(postable_id).creator_id.eql?(user.id)
+    end
   end
 end

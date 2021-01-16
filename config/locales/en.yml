@@ -14,6 +14,7 @@ en:
       demo: "Demotracks"
       spotify_tracks: "Tracks from Spotify"
       communities: "Communities"
+      posts: "Posts"
     profile_buttons:
       edit: "Edit Account"
       messages: "Messages"
@@ -72,4 +73,11 @@ en:
     community_buttons:
       edit: "Edit community"
       destroy: "Destroy community"
+  posts:
+    form:
+      title: "Title"
+      body: "Post body"
+      create: "Create post"
+    posts:
+      destroy: "Destroy post"
 

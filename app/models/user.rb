@@ -7,6 +7,7 @@ class User < ApplicationRecord
          :confirmable,
          :omniauthable,
          omniauth_providers: %i[spotify facebook]
+  include Postable
 
   has_one_attached :avatar
   has_many_attached :demotracks

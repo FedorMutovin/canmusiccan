@@ -1,0 +1,4 @@
+$('.post-errors').html('<%= render 'shared/errors', resource: @post %>');
+<% if @post.persisted? %>
+  $('.posts').html('<%= render 'posts/posts', resource: @resource %>');
+<% end %>
