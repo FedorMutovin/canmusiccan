@@ -3,10 +3,11 @@
     .row
       - if resource.demotracks.attached?
         - resource.demotracks.each do | demotrack |
-          p.col-6.bg-white id = "demotrack-#{demotrack.id}"
+          p.col-6.bg-white.section id = "demotrack-#{demotrack.id}"
             = link_to demotrack.filename.to_s, url_for(demotrack), class: 'text-success'
             br
             audio(controls)
               source src="#{rails_blob_url(demotrack)}" type="#{demotrack.content_type}"
             br
             = link_to t('.delete_track'), demotrack_path(demotrack), method: :delete, class: "btn btn-outline-success btn-sm mb-2", remote: true if can? :destroy, demotrack
+          .col-6

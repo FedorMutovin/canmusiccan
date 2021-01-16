@@ -1,0 +1,7 @@
+.post-errors
+  = render 'shared/errors', resource: resource
+
+= form_with model: [resource, resource.posts.new], local: false do |f|
+  = f.label :body, t('.body')
+  = f.text_area :body, class: "form-control"
+  = f.submit t('.create'), class: "btn btn-outline-success"

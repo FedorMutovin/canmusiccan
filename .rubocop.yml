@@ -13,6 +13,10 @@ Metrics/BlockLength:
   Exclude:
     - 'config/**/*'
     - 'spec/**/*'
+Metrics/MethodLength:
+  Exclude:
+    - 'app/models/ability.rb'
+  Max: 15
 
 Lint/AmbiguousBlockAssociation:
   Exclude:
@@ -62,9 +66,6 @@ RSpec/NestedGroups:
 Style/IdenticalConditionalBranches:
   Exclude:
     - 'app/services/find_for_oauth.rb'
-
-Metrics/MethodLength:
-  Max: 15
 
 Metrics/AbcSize:
   Enabled: false

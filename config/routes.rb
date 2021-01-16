@@ -6,11 +6,14 @@ Rails.application.routes.draw do
   end
   resources :users, only: :show do
     resources :demotracks, only: %i[create destroy], shallow: true
+    resources :posts, only: %i[create destroy], shallow: true
   end
 
   resources :conversations, only: :index
   resources :messages, only: %i[index create]
-  resources :communities
+  resources :communities do
+    resources :posts, only: %i[create destroy], shallow: true
+  end
 
   resources :spotify_tracks, only: %i[create destroy]
 

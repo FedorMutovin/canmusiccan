@@ -4,7 +4,7 @@ div class="tracks-#{resource.id}"
     .row
       - unless resource.spotify_tracks.empty?
         - resource.spotify_tracks.each do | track |
-          p.col-6.bg-white id = "spotify-track-#{track.id}"
+          p.col-6.bg-white.section id = "spotify-track-#{track.id}"
             = image_tag(track.image, size: '100', class: 'mt-2')
             br
             = track.artists
@@ -16,5 +16,6 @@ div class="tracks-#{resource.id}"
             br
             = link_to t('spotify_tracks.tracks.delete_track'), spotify_track_path(track),
                     class: "btn btn-outline-success btn-sm mb-2", method: :delete, remote: true if can? :destroy, track
+          .col-6
       - else
         = t('spotify_tracks.tracks.add_tracks_info') if resource.eql?(current_user)

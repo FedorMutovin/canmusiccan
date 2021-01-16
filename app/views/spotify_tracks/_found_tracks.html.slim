@@ -3,7 +3,7 @@
     - if resource
       - resource.each do | track |
         - if track.preview_url
-          p.col.bg-white.border id = "found-spotify-track-#{track.id}"
+          p.col.bg-white.border.section id = "found-spotify-track-#{track.id}"
             = image_tag(track.album.images[0]["url"], size: '100', class: 'mt-2')
             br
             = track.artists[0].name

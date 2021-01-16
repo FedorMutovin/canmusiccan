@@ -9,7 +9,7 @@
       = @user.email
       = render 'follows/follows_count', resource: @user
       = render 'profile_buttons', resource: @user, unread_messages_count: @unread_messages_count
-  .col-8.profile-tabs
+  .col-7.profile-tabs
     ul.nav.nav-tabs id="myTab" role="tablist"
       li.nav-item
         a.nav-link.active.text-success id="demotracks-tab" data-toggle="tab" href="#demotracks" role="tab" aria-controls="demotracks" aria-selected="true" #{t('.demo')}
@@ -17,6 +17,8 @@
         a.nav-link.text-success id="tracks-from-spotify-tab" data-toggle="tab" href="#tracks-from-spotify" role="tab" aria-controls="tracks-from-spotify" aria-selected="false" #{t('.spotify_tracks')}
       li.nav-item
         a.nav-link.text-success id="communities-tab" data-toggle="tab" href="#communities" role="tab" aria-controls="communities" aria-selected="false" #{t('.communities')}
+      li.nav-item
+        a.nav-link.text-success id="posts-tab" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="false" #{t('.posts')}
 
     .tab-content id="myTabContent"
       .tab-pane.fade.show.active.spotify_tracks id="demotracks" role="tabpanel" aria-labelledby="demotracks-tab"
@@ -26,6 +28,10 @@
         = render 'spotify_tracks/tracks', resource: @user
       .tab-pane.fade id="communities" role="communities" aria-labelledby="communities-tab"
         = render 'communities/user_communities', resource: @user
+      .tab-pane.fade id="posts" role="posts" aria-labelledby="posts-tab"
+        = render 'posts/form', resource: @user if @user.eql?(current_user)
+        .posts
+          = render 'posts/posts', klass: @user
   .col-4.border-left.search-spotify-tracks
     = render 'spotify_tracks/search'
     .found-spotify-tracks
