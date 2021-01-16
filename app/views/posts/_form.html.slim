@@ -2,8 +2,6 @@
   = render 'shared/errors', resource: resource
 
 = form_with model: [resource, resource.posts.new], local: false do |f|
-  = f.label :title, t('.title')
-  = f.text_field :title
   = f.label :body, t('.body')
-  = f.text_area :body
-  = f.submit t('.create')
+  = f.text_area :body, class: "form-control"
+  = f.submit t('.create'), class: "btn btn-outline-success"

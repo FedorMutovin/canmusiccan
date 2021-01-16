@@ -9,7 +9,7 @@
       = @user.email
       = render 'follows/follows_count', resource: @user
       = render 'profile_buttons', resource: @user, unread_messages_count: @unread_messages_count
-  .col-8.profile-tabs
+  .col-7.profile-tabs
     ul.nav.nav-tabs id="myTab" role="tablist"
       li.nav-item
         a.nav-link.active.text-success id="demotracks-tab" data-toggle="tab" href="#demotracks" role="tab" aria-controls="demotracks" aria-selected="true" #{t('.demo')}

@@ -75,7 +75,6 @@ ru:
       destroy: "Удалить сообщество"
   posts:
     form:
-      title: "Заголовок"
       body: "Содержание поста"
       create: "Создать пост"
     posts:

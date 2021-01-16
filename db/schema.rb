@@ -98,7 +98,6 @@ ActiveRecord::Schema.define(version: 2021_01_16_110527) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string "title"
     t.text "body"
     t.string "postable_type"
     t.bigint "postable_id"

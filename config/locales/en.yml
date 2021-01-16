@@ -75,7 +75,6 @@ en:
       destroy: "Destroy community"
   posts:
     form:
-      title: "Title"
       body: "Post body"
       create: "Create post"
     posts:
