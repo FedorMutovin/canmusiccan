@@ -20,7 +20,7 @@ en:
       messages: "Messages"
   demotracks:
     format_error: "You must add only audio file size no more than 5 mb"
-    demotracks:
+    demotrack:
       delete_track: "Delete Track"
     form:
       add_demotrack_info: "Add your new demotrack"

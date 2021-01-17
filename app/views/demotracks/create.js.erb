@@ -1,2 +1,2 @@
-$('.demotracks').html('<%= render 'demotracks/demotracks', resource: @user %>');
-
+$('.demotracks').html('<%= render @user.demotracks %>');
+$('.flash-notice').empty();

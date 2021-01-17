@@ -48,7 +48,7 @@ describe 'User can add spotify tracks to his collection', "
     end
     visit user_path(user)
     click_on I18n.t('users.show.spotify_tracks')
-    within ".tracks-#{user.id}" do
+    within '.profile-tabs' do
       expect(page).to have_css 'audio'
       expect(page).to have_css 'img'
     end
