@@ -14,3 +14,7 @@
               span
                 = activity.trackable.time
             = render_activity activity
+    .col-5
+      h3.text-center #{t(".search")}
+      = render 'search/form'
+      .search_results_block

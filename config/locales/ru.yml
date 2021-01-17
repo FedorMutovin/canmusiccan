@@ -82,6 +82,7 @@ ru:
   activities:
     index:
       newsfeed: "Лента новостей"
+      search: "Поиск"
   public_activity:
     demotrack:
       create:
@@ -89,4 +90,10 @@ ru:
     post:
       create:
         added_post: "Добавил(а) Пост"
+  search:
+    search_result:
+      result: "Результаты поиска:"
+    form:
+      search: "Искать"
+      placeholder: "Найди пользователя или сообщество"
 

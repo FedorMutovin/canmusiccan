@@ -1,0 +1,14 @@
+.search_results_block.mt-2
+  h5 #{t('.result')}
+  - unless results.empty?
+    - results.each do |result|
+      .col-3
+      - if result.avatar.attached?
+        = image_tag result.avatar.variant(resize: "50x50!"), class: "rounded-circle mt-2 mb-2"
+      - else
+        = image_pack_tag "media/images/default_avatar.png", style: "height: 50px; weight: 50px", class: "rounded-circle mt-2 mb-2"
+      .col-5.text-success
+      - if result.is_a?(User)
+        p= link_to(result.email, user_path(result), class: "text-success")
+      - else
+        p= link_to(result.name, community_path(result), class: "text-success")
