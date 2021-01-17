@@ -82,6 +82,7 @@ en:
   activities:
     index:
       newsfeed: "Newsfeed"
+      search: "Search"
   public_activity:
     demotrack:
       create:
@@ -89,4 +90,11 @@ en:
     post:
       create:
         added_post: "Added Post"
+  search:
+    search_result:
+      result: "Search results:"
+    form:
+      search: "Search"
+      placeholder: "Search user or community"
+
 

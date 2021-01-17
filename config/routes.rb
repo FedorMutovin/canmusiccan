@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :spotify_tracks, only: %i[create destroy]
 
   get 'search_tracks', to: 'spotify_tracks#search_tracks'
+  get 'search', to: 'search#search'
 
   match :follow, to: 'follows#create', as: :follow, via: :post
   match :unfollow, to: 'follows#destroy', as: :unfollow, via: :post
