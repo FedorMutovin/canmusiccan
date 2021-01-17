@@ -3,22 +3,22 @@ class DemotracksController < ApplicationController
   before_action :demotrack, only: :destroy
   before_action :user, only: :create
 
-  skip_authorization_check
+  authorize_resource
 
   def create
-    authorize! :create, @user.demotracks
-    redirect_to @user, alert: t('demotracks.format_error') unless @user.demotracks.attach(params[:demotrack])
+    @demotrack = @user.demotracks.new
+    @demotrack.audio.attach(params[:demotrack])
+    redirect_to @user, alert: t('demotracks.format_error') unless @demotrack.save
   end
 
   def destroy
-    authorize! :destroy, @demotrack
-    @demotrack.purge
+    @demotrack.destroy
   end
 
   private
 
   def demotrack
-    @demotrack ||= ActiveStorage::Attachment.find(params[:id])
+    @demotrack ||= Demotrack.find(params[:id])
   end
 
   def user

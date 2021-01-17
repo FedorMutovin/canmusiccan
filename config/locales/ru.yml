@@ -20,7 +20,7 @@ ru:
       messages: "Сообщения"
   demotracks:
     format_error: "Вы можете добавить только аудио файл, размером не более 5 мб."
-    demotracks:
+    demotrack:
       delete_track: "Удалить трек"
     form:
       add_demotrack_info: "Добавь своё новое демо"
@@ -77,6 +77,16 @@ ru:
     form:
       body: "Содержание поста"
       create: "Создать пост"
-    posts:
+    post:
       destroy: "Удалить пост"
+  activities:
+    index:
+      newsfeed: "Лента новостей"
+  public_activity:
+    demotrack:
+      create:
+        added_demotrack: "Добавил(а) Демо"
+    post:
+      create:
+        added_post: "Добавил(а) Пост"
 

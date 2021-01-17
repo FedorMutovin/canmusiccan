@@ -1,0 +1,16 @@
+.container
+  .row
+    .col-7.border-right
+      h3.text-center #{t(".newsfeed")}
+      - unless @activities.empty?
+        - @activities.each do |activity|
+          .activity.section
+            - if activity.owner.avatar.attached?
+              = image_tag activity.owner.variant(resize: "50x50!"), class: "rounded-circle mt-2 mb-2"
+            - else
+              = image_pack_tag "media/images/default_avatar.png", style: "height: 50px; weight: 50px", class: "rounded-circle mt-2 mb-2"
+              span
+                = link_to activity_owner(activity), activity.owner,class: "name font-weight-bold text-success" if activity.owner
+              span
+                = activity.trackable.time
+            = render_activity activity

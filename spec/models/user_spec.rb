@@ -7,6 +7,7 @@ RSpec.describe User, type: :model do
   it { is_expected.to validate_presence_of :password }
   it { is_expected.to have_many(:authorizations).dependent(:destroy) }
   it { is_expected.to have_many(:spotify_tracks).dependent(:destroy) }
+  it { is_expected.to have_many(:demotracks).dependent(:destroy) }
   it { is_expected.to have_many(:conversations).dependent(:destroy) }
   it { is_expected.to have_many(:conversations).dependent(:destroy).with_foreign_key('receiver_id') }
   it { is_expected.to have_many(:messages).dependent(:destroy) }
@@ -15,10 +16,6 @@ RSpec.describe User, type: :model do
 
   it 'have one attached avatar' do
     expect(described_class.new.avatar).to be_an_instance_of(ActiveStorage::Attached::One)
-  end
-
-  it 'have many attached demotrack' do
-    expect(described_class.new.demotracks).to be_an_instance_of(ActiveStorage::Attached::Many)
   end
 
   describe '.find_for_ouath' do

@@ -8,8 +8,4 @@ class Message < ApplicationRecord
   def self.read(current_user)
     unread(current_user).update_all(read: true)
   end
-
-  def time
-    created_at.strftime('%d/%m/%y at %l:%M %p')
-  end
 end
