@@ -19,7 +19,7 @@ describe 'User or community can destroy his post', "
         visit user_path(user)
         click_on I18n.t('users.show.posts')
         expect(page).to have_content post.body
-        click_on I18n.t('posts.posts.destroy')
+        click_on I18n.t('posts.post.destroy')
         page.driver.browser.switch_to.alert.accept
         expect(page).not_to have_content post.body
       end
@@ -48,7 +48,7 @@ describe 'User or community can destroy his post', "
         visit community_path(user_community)
         click_on I18n.t('communities.show.posts')
         expect(page).to have_content user_community_post.body
-        click_on I18n.t('posts.posts.destroy')
+        click_on I18n.t('posts.post.destroy')
         page.driver.browser.switch_to.alert.accept
         expect(page).not_to have_content user_community_post.body
       end

@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 
   def create
     @post = @resource.posts.create(post_params)
+    @post.create_activity :create, owner: @resource unless @post.new_record?
   end
 
   def destroy

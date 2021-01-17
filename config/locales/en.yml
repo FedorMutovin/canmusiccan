@@ -77,6 +77,16 @@ en:
     form:
       body: "Post body"
       create: "Create post"
-    posts:
+    post:
       destroy: "Destroy post"
+  activities:
+    index:
+      newsfeed: "Newsfeed"
+  public_activity:
+    demotrack:
+      create:
+        added_demotrack: "Added Demo"
+    post:
+      create:
+        added_post: "Added Post"
 

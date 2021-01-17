@@ -37,6 +37,7 @@ gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
 gem 'cancancan'
 gem 'gon'
 gem 'image_processing', '~> 1.2'
+gem 'public_activity'
 gem 'rspotify'
 gem 'slim-rails'
 

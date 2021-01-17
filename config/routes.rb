@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'home#index'
+  root to: 'activities#index'
   devise_for :users, controllers: { omniauth_callbacks: 'oauth_callbacks' }
   devise_scope :user do
     post 'set_email', to: 'oauth_callbacks#set_email'
@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :demotracks, only: %i[create destroy], shallow: true
     resources :posts, only: %i[create destroy], shallow: true
   end
+
+  resources :activities, only: :index
 
   resources :conversations, only: :index
   resources :messages, only: %i[index create]

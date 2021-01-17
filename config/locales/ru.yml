@@ -77,6 +77,16 @@ ru:
     form:
       body: "Содержание поста"
       create: "Создать пост"
-    posts:
+    post:
       destroy: "Удалить пост"
+  activities:
+    index:
+      newsfeed: "Лента новостей"
+  public_activity:
+    demotrack:
+      create:
+        added_demotrack: "Добавил(а) Демо"
+    post:
+      create:
+        added_post: "Добавил(а) Пост"
 

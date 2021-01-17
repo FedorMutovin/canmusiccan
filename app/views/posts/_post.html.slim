@@ -1,0 +1,24 @@
+- unless post.new_record?
+  div id ="post-#{post.id}"
+    .container.mt-5
+      .d-flex.row
+        .col-md-12
+          .bg-white.section
+            .d-flex.flex-row.user.p-2
+              - if post.postable.avatar.attached?
+                = image_tag klass.avatar.variant(resize: "50x50!"), class: "rounded-circle mt-2 mb-2"
+              - else
+                = image_pack_tag "media/images/default_avatar.png", style: "height: 50px; weight: 50px", class: "rounded-circle mt-2 mb-2"
+              .d-flex.flex-column.ml-2
+                span.name.font-weight-bold
+                  = post.postable.try(:name) || post.postable.try(:email)
+                span
+                  = post.time
+            .mt-2.p-2
+              p.post-content
+                = post.body
+            .d-flex.justify-content-between.p-3.border-top
+              span
+                - if post.postable.eql?(current_user) || can?(:destroy, post.postable)
+                  - post_resource = post
+                  = link_to t('.destroy'), post_path(post), data: { confirm: "Are you sure?" }, method: :delete, remote: true if can? :destroy, post_resource
