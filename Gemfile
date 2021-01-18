@@ -34,6 +34,7 @@ gem 'omniauth-spotify'
 
 gem 'activestorage-validator'
 gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'
+gem 'aws-sdk-s3', require: false
 gem 'cancancan'
 gem 'gon'
 gem 'image_processing', '~> 1.2'
