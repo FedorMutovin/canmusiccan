@@ -1,2 +1,2 @@
 $('.spotify-tracks-errors-' + <%= current_user.id %>).html('<%= render 'shared/errors', resource: @track %>');
-$('.tracks-' + <%= current_user.id %>).html('<%= render 'spotify_tracks/tracks', resource: current_user %>');
+$('.tracks-' + <%= current_user.id %>).html('<%= render current_user.spotify_tracks %>');

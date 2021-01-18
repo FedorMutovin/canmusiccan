@@ -1,5 +1,5 @@
 class SpotifyTrack < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, touch: true
   validates :name, :spotify_id, :artists, :image, :preview, presence: true
   validates :spotify_id, uniqueness: { scope: :user }
 

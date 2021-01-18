@@ -17,7 +17,7 @@ describe 'User can delete his tracks from spotify', "
     click_on I18n.t('users.show.spotify_tracks')
     expect(page).to have_css 'audio'
     expect(page).to have_css 'img'
-    click_on I18n.t('spotify_tracks.tracks.delete_track')
+    click_on I18n.t('spotify_tracks.spotify_track.delete_track')
     within '.profile-tabs' do
       expect(page).not_to have_css 'audio'
       expect(page).not_to have_css 'img'
@@ -27,6 +27,6 @@ describe 'User can delete his tracks from spotify', "
   it 'is not delete spotify track', js: true do
     visit user_path(other_user)
     click_on I18n.t('users.show.spotify_tracks')
-    expect(page).not_to have_content I18n.t('spotify_tracks.tracks.delete_track')
+    expect(page).not_to have_content I18n.t('spotify_tracks.spotify_track.delete_track')
   end
 end

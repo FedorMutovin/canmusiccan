@@ -6,7 +6,7 @@
           .bg-white.section
             .d-flex.flex-row.user.p-2
               - if post.postable.avatar.attached?
-                = image_tag klass.avatar.variant(resize: "50x50!"), class: "rounded-circle mt-2 mb-2"
+                = image_tag post.postable.avatar.variant(resize: "50x50!"), class: "rounded-circle mt-2 mb-2"
               - else
                 = image_pack_tag "media/images/default_avatar.png", style: "height: 50px; weight: 50px", class: "rounded-circle mt-2 mb-2"
               .d-flex.flex-column.ml-2
