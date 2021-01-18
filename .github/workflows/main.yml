@@ -9,7 +9,7 @@ on: [push,pull_request]
 jobs:
   rubocop-test:
     name: Rubocop
-    runs-on: ubuntu-latestdadatabase.yml.github-actionstabase.yml.github-actions
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - uses: ruby/setup-ruby@v1
