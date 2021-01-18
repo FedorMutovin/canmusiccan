@@ -9,10 +9,10 @@
               = image_tag activity.owner.avatar.variant(resize: "50x50!"), class: "rounded-circle mt-2 mb-2"
             - else
               = image_pack_tag "media/images/default_avatar.png", style: "height: 50px; weight: 50px", class: "rounded-circle mt-2 mb-2"
-              span
-                = link_to activity_owner(activity), activity.owner,class: "name font-weight-bold text-success" if activity.owner
-              span
-                = activity.trackable.time
+            span
+              = link_to activity_owner(activity), activity.owner,class: "name font-weight-bold text-success" if activity.owner
+            span
+              = activity.trackable.time
             = render_activity activity
     .col-5
       h3.text-center #{t(".search")}
