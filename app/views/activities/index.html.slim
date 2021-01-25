@@ -12,7 +12,7 @@
             span
               = link_to activity_owner(activity), activity.owner,class: "name font-weight-bold text-success" if activity.owner
             span
-              = activity.trackable.time
+              = activity.trackable.try(:time)
             = render_activity activity
     .col-5
       h3.text-center #{t(".search")}
