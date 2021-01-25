@@ -1,15 +1,14 @@
 .media.bg-white
   li.list-group-item
     .media-left
-      - cache message do
-        - if message.user.avatar.attached?
-          = image_tag message.user.avatar.variant(resize: "50x50!"), class: "rounded-circle"
-        - else
-          = image_pack_tag "media/images/default_avatar.png", style: "height: 50px; weight: 50px", class: "rounded-circle"
-      .media-body
-        h5.media-heading
-          = message.user.email
-          small.text-muted
-            = message.time
-        p
-          = message.body
+      - if message.user.avatar.attached?
+        = image_tag message.user.avatar.variant(resize: "50x50!"), class: "rounded-circle"
+      - else
+        = image_pack_tag "media/images/default_avatar.png", style: "height: 50px; weight: 50px", class: "rounded-circle"
+    .media-body
+      h5.media-heading
+        = message.user.email
+        small.text-muted
+          = message.time
+      p
+        = message.body
