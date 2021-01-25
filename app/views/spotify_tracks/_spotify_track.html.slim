@@ -1,16 +1,15 @@
-- cache spotify_track do
-  .container
-    .row
-      p.col-6.bg-white.section id = "spotify-track-#{spotify_track.id}"
-        = image_tag(spotify_track.image, size: '100', class: 'mt-2')
-        br
-        = spotify_track.artists
-        br
-        = spotify_track.name
-        br
-        audio(controls)
-          source src="#{spotify_track.preview}"
-        br
-        = link_to t('spotify_tracks.spotify_track.delete_track'), spotify_track_path(spotify_track),
-                class: "btn btn-outline-success btn-sm mb-2", method: :delete, remote: true if can? :destroy, spotify_track
-      .col-6
+.container
+  .row
+    p.col-6.bg-white.section id = "spotify-track-#{spotify_track.id}"
+      = image_tag(spotify_track.image, size: '100', class: 'mt-2')
+      br
+      = spotify_track.artists
+      br
+      = spotify_track.name
+      br
+      audio(controls)
+        source src="#{spotify_track.preview}"
+      br
+      = link_to t('spotify_tracks.spotify_track.delete_track'), spotify_track_path(spotify_track),
+              class: "btn btn-outline-success btn-sm mb-2", method: :delete, remote: true if can? :destroy, spotify_track
+    .col-6
